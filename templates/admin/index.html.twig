@@ -1,0 +1,13 @@
+{% extends 'base.admin.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row justify-content-around">
+        <h1 class="text-center h2 my-5 ">Bonjour {{ app.user.email|capitalize }}</h1>
+        <a href="{{ path('app_admin_user') }}" class="btn btn-outline-dark col-5 py-5">User</a>
+        <a href="{{ path('app_admin_article') }}" class="btn btn-outline-dark col-5 py-5">Article</a>
+    </div>
+</div>
+{% endblock %}

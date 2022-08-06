@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<div class="container col-8 mx-auto">
+    <div class="card bg-dark mb-5" style="height:420px; background-image: url('{{ asset('uploads/photos/thumb-1920-546091.jpg') }}'); background-size: cover;">
+        <div class="col-6 text-end text-white h-100">
+            <div class="me-auto my-auto h-100 align-middle">
+                {# En cours #}
+            </div>
+
+
+        </div>
+        <div class="col-6"></div>
+    </div>
+    <div class="row justify-content-start my-4">
+        <h2 class="textOrange mb-4">Nos Articles</h2>
+
+        {% for data in cellules %}
+            <a href="{{ path('app_show', {'slug': data.slug}) }}" class="text-decoration-none col-4 textOrange my-2">
+                <div class="card">
+                    <img src="{{ asset('uploads/photos/' ~ data.cover) }}" class="card-img-top"  alt="{{data.title}}">
+                    <div class="card-body" style="min-height:20vh;">
+                        <h3 class="h4">{{ data.title }}</h3>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+        
+    </div>
+</div>
+{% endblock %}

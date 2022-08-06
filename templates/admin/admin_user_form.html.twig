@@ -1,0 +1,33 @@
+{% extends 'base.admin.html.twig' %}
+
+{% block title %}User Update{% endblock %}
+
+{% block body %}
+    <section class="container my-4">
+        <div class="row mx-auto">
+
+            <h1 class="text-center my-3">Modification du role de l'utilisateur</h1>
+
+            <div class="card text-center col-8 mx-auto">
+                <div class="card-header">
+                    Utilisateur n° {{user.id}}
+                </div>
+                {{ form_start(form) }}
+                <div class="card-body">
+                    <h5 class="card-title mb-2">Email : {{user.email}}</h5>
+                    <div class="col-4 mx-auto my-3">
+                        {{ form_widget(form) }}
+                    </div>    
+                </div>
+                <div class="card-footer">
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-outline-success col-3">Enregistrer</button>
+                    </div>
+                </div>
+                {{ form_end(form) }}
+            </div>
+
+        </div>
+    </section>
+    
+{% endblock %}

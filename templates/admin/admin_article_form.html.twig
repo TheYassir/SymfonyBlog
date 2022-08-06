@@ -1,0 +1,57 @@
+{% extends 'base.admin.html.twig' %}
+
+{% block title %}{% if editMode %}Update Article{% else %}New Article{% endif %}{% endblock %}
+
+{% block body %}
+    <section class="container my-4">
+        <div class="row mx-auto">
+
+            <h1 class="text-center my-3">
+            {% if editMode %}
+                Modification de l'article n°{{ article.id }}
+            {% else %}
+                Ajout d'un article
+            {% endif %}
+            </h1>
+
+            <div class="card text-center col-8 mx-auto my-3">
+
+                <div class="card-header">
+                    {% if editMode %}
+                        Article n°{{ article.id }}
+                    {% else %}
+                        Nouveau Article
+                    {% endif %}
+                </div>
+                {{ form_start(form) }}
+                    <div class="card-body">
+                    
+
+                            <div class="text-center">
+                                <p class="card-text">{{ form_row(form.title) }}</p>
+                            </div>
+
+                            <div class="text-center">
+                                <p class="card-text">{{ form_row(form.content) }}</p>
+                            </div>                        
+                            
+                            <div class="text-center">
+                                <p class="card-text">{{ form_row(form.cover) }}</p>
+                            </div>
+
+
+                            
+                        
+                    </div>
+
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-outline-success col-3">Enregistrer</button>
+                    </div>
+                {{ form_end(form) }}
+
+            </div>
+
+        </div>
+    </section>
+    
+{% endblock %}

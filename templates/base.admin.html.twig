@@ -3,7 +3,7 @@
     <head>
 
         <meta charset="UTF-8">
-        <title>{% block title %}Home{% endblock %}</title>
+        <title>{% block title %}Accueil{% endblock %}\ Admin</title>
         
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -19,7 +19,7 @@
 
         <header>
             <nav class="navbar col-8 mx-auto">
-                <div class="nav-item">
+                <div class="nav-link">
                     <a href="{{ path('app_main') }}" class="text-decoration-none textOrange">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
                             <defs>
@@ -37,6 +37,8 @@
                     <span class="">SpaceBlog</span>
                     </a>
                 </div>
+                    <a class="nav-link" href="{{ path('app_admin_article') }}">Articles</a>
+                    <a class="nav-link" href="{{ path('app_admin_user') }}">Users</a>
                 <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Compte

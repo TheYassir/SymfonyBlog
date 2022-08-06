@@ -1,0 +1,33 @@
+// Import all of Bootstrap's CSS
+@import "~bootstrap/scss/bootstrap";
+
+$back: #E4E6EC;
+$orange:#DC5E44;
+$text: #131313;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $back;
+}
+main{
+    min-height: 80vh;
+}
+footer {
+    height: 300px;
+    background-color: $orange;
+}
+.textNoir{
+    color: $text;
+}
+.textOrange {
+    color:$orange;
+}
+.btn-orange{
+    color:  white ;
+    background-color: #DC5E44;
+    border-radius: 35%;
+}
